@@ -55,10 +55,12 @@ def ucs_edges(G, source, weight='weight'):
     # priority and is guaranteed unique for all nodes in the graph.
     queue = [(0, source, None)]
     visited.add(source)
+    print("Inizio la visita dal nodo ", source)
 
     while queue:
         # Pop the smallest item from queue.
         current_cost, current_node, parent = pop(queue)
+        print("Sto visitando il nodo ", current_node, "con costo ", current_cost )
 
         for neighbour in iter(G[current_node]):
             if neighbour in visited:

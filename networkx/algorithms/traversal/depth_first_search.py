@@ -65,6 +65,7 @@ def dfs_edges(G, source=None, depth_limit=None):
     else:
         # edges for components with source
         nodes = [source]
+        print("Inizio la visita dal nodo ", source)
     visited = set()
     if depth_limit is None:
         depth_limit = len(G)
@@ -78,6 +79,7 @@ def dfs_edges(G, source=None, depth_limit=None):
             try:
                 child = next(children)
                 if child not in visited:
+                    print("Sto visitando il nodo ", child)
                     yield parent, child
                     visited.add(child)
                     if depth_now > 1:
